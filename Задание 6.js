@@ -1,11 +1,9 @@
-function checkArrayType(arr) {
-   let arr1 = arr.map(e => typeof e);
-   return [...new Set(arr1)].length === 1;
-}
+let arr = [1, 1, 1, 4, 1];
+let checkElements = 'true';
 
-function checkArrayType1(arr) {
-   return arr.every((e, i, a) => typeof e === typeof a[0]);
+for (let i = 0; i < arr.length - 1; i++) {
+   if (arr[i] !== arr[i + 1]) {
+      checkElements = 'false';
+   }
 }
-
-console.log(checkArrayType([3, 6, 7, '3']));
-console.log(checkArrayType1([3, 6, 7, 3]));
+console.log(checkElements)
